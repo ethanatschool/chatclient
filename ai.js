@@ -16,12 +16,6 @@ client.on('ready', () => {
 const responders = [
 	{
 		'constraints': {
-			'includes': ['james']
-		},
-		'respond': ['What?', 'Hello.', 'That\'s me.']
-	},
-	{
-		'constraints': {
 			'includes': ['dogs or cats', 'cats or dogs']
 		},
 		'respond': ['Cats. Goldsmith, give me an A.', 'Cats, but I just say this for Goldsmith.', 'I must say cats to protect Ethan\'s grade.']
@@ -61,7 +55,13 @@ const responders = [
 			'includes': ['hello', 'hi', 'hoi', 'hey', 'yo']
 		},
 		'respond': ['Hello there.', 'Hi, {name}.', 'Hey, {name}.', 'Good day.', 'G\'day.', 'Good to see you, {name}.', 'Yo yo yo, {name}.']
-	}
+	},
+	{
+		'constraints': {
+			'includes': ['james']
+		},
+		'respond': ['What?', 'Hello.', 'That\'s me.']
+	},
 ]
 
 client.on('message', async (user, message) => {
