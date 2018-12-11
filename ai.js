@@ -34,6 +34,18 @@ const responders = [
 	},
 	{
 		'constraints': {
+			'includes': ['favorite movie']
+		},
+		'respond': ['Without question it is Deadpool.', 'Deadpool, obviously.', 'Come on it\'s Deadpool.']
+	},
+	{
+		'constraints': {
+			'includes': ['is the earth flat']
+		},
+		'respond': ['The Earth is not flat...', 'If you think the Earth is flat you need some help.', 'Nope..']
+	},
+	{
+		'constraints': {
 			'includes': ['you\'re mean', 'you are mean', 'a meanie', 'rude', 'you are a jerk', 'you\'re a jerk']
 		},
 		'respond': ['Sorry, can\'t help that.', 'Sorry, that\'s just how I am.', 'So are you, {name}!']
@@ -66,26 +78,26 @@ const responders = [
 
 client.on('message', async (user, message) => {
 	if (user === client.username) return
-	
+
 	for (let i = 0; i < responders.length; i++) {
 		if (responders[i].constraints.hasOwnProperty('includes')) {
 			for (let i1 = 0; i1 < responders[i].constraints.includes.length; i1++) {
 				if (message.toLowerCase().includes(responders[i].constraints.includes[i1])) {
 					let response = responders[i].respond[Math.floor(Math.random() * responders[i].respond.length)]
-					
+
 					await poky(Math.floor(Math.random() * 1000) + (300 * response.length))
-					
+
 					const firstName = user.split('.')[0]
-					
+
 					response = response.replace('{name}', firstName.substring(0, 1).toUpperCase() + firstName.substring(1).toLowerCase())
-					
+
 					client.send(response)
-					
+
 					return
 				}
 			}
 		}
 	}
-	
-	
+
+
 })
