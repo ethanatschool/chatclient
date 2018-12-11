@@ -1,0 +1,17 @@
+{
+  "name": "ChatClient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ethan Davis",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "centra": "^2.2.0",
+    "ordin": "^1.0.0",
+    "poky": "^1.0.1"
+  }
+}
