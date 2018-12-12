@@ -81,7 +81,7 @@ const responders = [
 	{
 		'constraints': [
 			{
-				'includes': ['hello', 'hi', 'hoi', 'hey', 'yo']
+				'includes': ['hello', 'hi', 'hoi', 'hey', 'yo', 'sup']
 			},
 			{
 				'includes': 'james'
@@ -133,7 +133,7 @@ client.on('message', async (user, message) => {
 				}
 			}
 			
-			let response = responders[i].respond[Math.floor(Math.random() * responders[i].respond.length)]
+			let response = responders[i].respond[responders[i].responseIndex]
 					
 			await poky(Math.floor(Math.random() * 1000) + (300 * response.length))
 			
