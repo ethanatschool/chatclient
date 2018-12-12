@@ -84,7 +84,7 @@ const responders = [
 				'includes': ['hello', 'hi', 'hoi', 'hey', 'yo', 'sup']
 			},
 			{
-				'includes': 'james'
+				'includes': ['james']
 			}
 		],
 		'respond': ['Hello there.', 'Hi, {name}.', 'Hey, {name}.', 'Good day.', 'G\'day.', 'Good to see you, {name}.', 'Yo yo yo, {name}.']
